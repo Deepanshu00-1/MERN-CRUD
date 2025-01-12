@@ -5,7 +5,13 @@ import UserModel from "./models/UserModel.js";
 
 const app = express();
 
-app.use(cors()); // ensures frontend and backend connection
+app.use(cors(
+    {
+        origin: [""],
+        methods: ["POST", "GET", "PUT", "DELETE"],
+        credentials: true
+    }
+)); // ensures frontend and backend connection
 app.use(express.json()); // ensures that express data is passed in json format through routes or api calls
 
 connectDB();
