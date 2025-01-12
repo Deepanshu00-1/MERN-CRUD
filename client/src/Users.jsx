@@ -7,14 +7,16 @@ const Users =()=>{
 
     const [users, setUsers] = useState([]);
 
+    axios.defaults.withCredentials = true;
+
     useEffect(()=>{
-        axios.get("http://localhost:8000/")
+        axios.get("https://mern-crud-backend-mu.vercel.app/")
         .then(users => setUsers(users.data))
         .catch(err => console.log(err));
     },[])
 
     const handleDelete = (id)=>{
-        axios.delete('http://localhost:8000/deleteUser/'+id)
+        axios.delete('https://mern-crud-backend-mu.vercel.app/'+id)
         .then(result => {
             console.log(result)
             window.location.reload()
