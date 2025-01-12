@@ -5,7 +5,7 @@ import axios from "axios";
 
 const CreateUser =()=>{
 
-    axios.defaultswithCredentials = true;
+    axios.defaults.withCredentials = true;
 
     const [name, setName] = useState();
     const [email, setEmail] = useState();
