@@ -7,12 +7,14 @@ const UpdateUser =()=>{
     const {id} = useParams()
     const navigate = useNavigate();
 
+    axios.defaultswithCredentials = true;
+
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [age, setAge] = useState();
 
     useEffect(()=>{
-        axios.get("http://localhost:8000/getUser/"+id)
+        axios.get("https://mern-crud-backend-mu.vercel.app/getUser/"+id)
         .then(result => {
             console.log(result)
             setName(result.data.name)
@@ -24,7 +26,7 @@ const UpdateUser =()=>{
 
     const Update =(e)=>{
         e.preventDefault()
-        axios.put("http://localhost:8000/updateUser/"+id, {name, email, age})
+        axios.put("https://mern-crud-backend-mu.vercel.app/updateUser/"+id, {name, email, age})
         .then(result => {
             console.log(result)
             navigate('/')
