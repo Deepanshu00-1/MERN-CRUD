@@ -7,7 +7,7 @@ const UpdateUser =()=>{
     const {id} = useParams()
     const navigate = useNavigate();
 
-    axios.defaultswithCredentials = true;
+    axios.defaults.withCredentials = true;
 
     const [name, setName] = useState();
     const [email, setEmail] = useState();
