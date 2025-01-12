@@ -16,7 +16,7 @@ const Users =()=>{
     },[])
 
     const handleDelete = (id)=>{
-        axios.delete('https://mern-crud-backend-mu.vercel.app/'+id)
+        axios.delete('https://mern-crud-backend-mu.vercel.app'+id)
         .then(result => {
             console.log(result)
             window.location.reload()
