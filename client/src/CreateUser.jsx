@@ -5,6 +5,8 @@ import axios from "axios";
 
 const CreateUser =()=>{
 
+    axios.defaultswithCredentials = true;
+
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [age, setAge] = useState();
@@ -13,7 +15,7 @@ const CreateUser =()=>{
 
     const Submit = (e)=>{
         e.preventDefault();
-        axios.post("http://localhost:8000/userData",{name, email, age})
+        axios.post("https://mern-crud-backend-mu.vercel.app/userData",{name, email, age})
         .then(result => {
             console.log(result)
             navigate("/")
